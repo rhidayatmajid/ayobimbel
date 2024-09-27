@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.1.0
       with:
-        fetch-depth: 2 
+        fetch-depth: 2
     - name: Build assets
       run: npm install && npm run build
 
@@ -22,10 +22,10 @@ jobs:
 
     - name: Install PHP dependencies
       run: composer install --no-dev --optimize-autoloader
-        
+
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        server: ${{ secrets.SERVER }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
